@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 
 
 app.post('/weather', function (req, res) {
-var WeatherResult="";
+res.set('Content-Type', 'application/json');
+
   var options = { 
   method: 'GET',
   url: 'https://query.yahooapis.com/v1/public/yql',
@@ -24,7 +25,7 @@ var WeatherResult="";
    proxy: proxy
    };
 
-WeatherResult=request(options, function (error, response, body) {
+request(options, function (error, response, body) {
   if (error) 
   {
   var error=
