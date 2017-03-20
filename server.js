@@ -58,8 +58,65 @@ app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
 app.get('/', function(request, response) {
-    var result = '<html><title>Arcsoftech-Heroku</title><body><h1>Name:Arcsoftech-Webhook.<br/>Author:Arihant Chhajed.<br/>Status:App is running.<br/></h1></body></html>'
-    response.send(result);
+    var template = "<html>"+
+"<head>"+
+"<title>Arcsoftech-Webhook</title>"+
+"</head>"+
+"<body>"+
+"<div>"+
+    "<centre>"+
+    "<h3>Application Info</h3>"+
+    "<h4><b>Status:</b>App is running</h4>"+
+    "<table class="table table-bordered">"+
+        "<thead>"+
+            "<tr>"+
+                "<th>S.no</th>"+
+                "<th>Entity</th>"+
+                "<th>Value</th>"+
+            "</tr>"+
+        "</thead>"+
+        "<tbody>"+
+            "<tr>"+
+                "<td>1</td>"+
+                "<td>Name</td>"+
+                "<td>Arcsoftech-Heroku</td>"+
+            "</tr>"+
+            "<tr>"+
+                "<td>2</td>"+
+                "<td>Purpose</td>"+
+                "<td>To showcase Example for Webhook in API.AI</td>"+
+            "</tr>"+
+               "<tr>"+
+                "<td>3</td>"+
+                "<td>Author</td>"+
+                "<td>Arihant Chhajed</td>"+
+            "</tr>"+
+               "<tr>"+
+                "<td>4</td>"+
+                "<td>Github Repository</td>"+
+                "<td>https://github.com/arcsoftech/api.ai-webhook.git</td>"+
+            "</tr>"+
+               "<tr>"+
+                "<td>5</td>"+
+                "<td>API Request Method</td>"+
+                "<td>POST</td>"+
+            "</tr>"+
+             "<tr>"+
+                "<td>6</td>"+
+                "<td>Service Used</td>"+
+            "</tr>"+
+                 "<tr>"+
+                "<td>7</td>"+
+                "<td>API EndPoint</td>"+
+                "<td>https://webhook-arcsoftech.herokuapp.com/weather</td>"+
+            "</tr>"+ 
+        "</tbody>"+
+    "</table>"+
+    "</center>"+
+"</div>"+
+"</body>"+
+"</html>"
+    response.send(template);
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
