@@ -62,7 +62,7 @@ WeatherResult=request(options, function (error, response, body) {
   // });
 })
 
-var server = app.listen(Number(process.env.port) || 1337, function () {
+var server = app.listen(Number(process.env.port) || 8080, function () {
 
   var host = server.address().address;
   var port = server.address().port;
