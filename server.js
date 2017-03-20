@@ -115,7 +115,7 @@ app.get('/', function(request, response) {
     "</center>"+
 "</div>"+
 "</body>"+
-"</html>"
+"</html>";
     response.send(template);
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
