@@ -1,13 +1,20 @@
+/*
+ *Author:Arihant Chhajed
+ *Language:Node.JS
+ *License:Open-Source
+*/
+
+
 //Initialization
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var json_body_parser = bodyParser.json();
+var json_body_parser = bodyParser.json();//this is used to prevent empty reponse in api.ai
 var request = require('request');
 app.use(bodyParser.json());
 //const proxy='http://proxy.company.com:8080';// or blank for without proxy
  const proxy = '';
-app.post('/weather',json_body_parser, function (req, res) 
+app.post('/weather',json_body_parser, function (req, res) //2nd parameter is used to prevent empty string error in api.ai
 {
 	res.set('Content-Type', 'application/json');
 	var options = { 
