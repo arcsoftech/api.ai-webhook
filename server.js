@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-var json_body_parser = body_parser.json();
+var json_body_parser = bodyParser.json();
 var request = require('request');
 app.use(bodyParser.json());
 //const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
