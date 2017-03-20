@@ -67,7 +67,7 @@ app.get('/', function(request, response) {
     "<centre>"+
     "<h3>Application Info</h3>"+
     "<h4><b>Status:</b>App is running</h4>"+
-    "<table class="table table-bordered">"+
+    "<table>"+
         "<thead>"+
             "<tr>"+
                 "<th>S.no</th>"+
