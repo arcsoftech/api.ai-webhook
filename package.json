@@ -1,0 +1,26 @@
+{
+  "name": "arcsoftech-webhook",
+  "version": "1.0.0",
+  "description": "This is an api for webhook in api.ai",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcsoftech/api.ai-webhook.git"
+  },
+  "keywords": [
+    "webhook"
+  ],
+  "author": "Arihant Chhajed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arcsoftech/api.ai-webhook/issues"
+  },
+    "engines": {
+    "node": "4.1.1"
+  },
+  "homepage": "https://github.com/arcsoftech/api.ai-webhook#readme"
+}
