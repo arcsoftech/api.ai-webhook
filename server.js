@@ -104,6 +104,7 @@ app.get('/', function(request, response) {
              "<tr>"+
                 "<td>6</td>"+
                 "<td>Service Used</td>"+
+				"<td>Yahoo Weather API</td>"+
             "</tr>"+
                  "<tr>"+
                 "<td>7</td>"+
