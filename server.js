@@ -27,15 +27,16 @@ app.post('/weather', function (req, res) {
 request(options, function (error, response, body) {
   if (error) 
   {
-  var error=
+  var error1=
   {
+	  console.log(error);
 	  "status": {
     "code": 206,
     "errorType": "partial_content",
     "errorDetails": "Webhook call failed. Status code 503. Error:503 Service Unavailable"
 }
   }
-      res.end(JSON.stringify(error));
+      res.end(JSON.stringify(error1));
 	  throw new Error(error);
   }
   else{
