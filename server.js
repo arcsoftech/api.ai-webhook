@@ -56,8 +56,8 @@ request(options, function (error, response, body) {
   "speech": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F",
   "source": "Arcsoftech-Webhook",
   "displayText": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F",
-  "data":[],
-  "contextOut": []    	  
+  "data":"",
+  "contextOut": ""    	  
  }
   }
 
