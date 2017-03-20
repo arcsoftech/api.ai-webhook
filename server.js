@@ -4,8 +4,8 @@ var fs = require("fs");
 var bodyParser = require('body-parser');
 var request = require('request');
 app.use(bodyParser.json());
-const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
-       // const proxy = '';
+//const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
+        const proxy = '';
 
 
 app.post('/weather', function (req, res) {
@@ -62,7 +62,7 @@ WeatherResult=request(options, function (error, response, body) {
   // });
 })
 
-var server = app.listen(8000, function () {
+var server = app.listen(8080, function () {
 
   var host = server.address().address;
   var port = server.address().port;
