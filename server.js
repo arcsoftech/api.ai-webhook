@@ -27,9 +27,10 @@ app.post('/weather', function (req, res) {
 request(options, function (error, response, body) {
   if (error) 
   {
+	   console.log(error);
   var error1=
   {
-	  console.log(error);
+	 
 	  "status": {
     "code": 206,
     "errorType": "partial_content",
