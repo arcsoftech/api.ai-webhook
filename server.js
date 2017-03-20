@@ -9,6 +9,11 @@ app.use(bodyParser.json());
 
 
 app.post('/weather', function (req, res) {
+	res.set({
+  'Content-Type': 'application/json',
+  'Content-Length': '123',
+  'ETag': '12345'
+})
 
   var options = { 
   method: 'GET',
