@@ -67,7 +67,7 @@ app.get('/', function(request, response) {
     "<centre>"+
     "<h3>Application Info</h3>"+
     "<h4><b>Status:</b>App is running</h4>"+
-    "<table>"+
+    "<table border='1'>"+
         "<thead>"+
             "<tr>"+
                 "<th>S.no</th>"+
@@ -115,7 +115,7 @@ app.get('/', function(request, response) {
     "</center>"+
 "</div>"+
 "</body>"+
-"</html>";
+"</html>"
     response.send(template);
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
