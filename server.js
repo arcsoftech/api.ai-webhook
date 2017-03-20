@@ -40,7 +40,7 @@ WeatherResult=request(options, function (error, response, body) {
   }
   else{
   
-  console.log(body);
+  console.log("API call succesfull.");
   var data = JSON.parse( body );
   var fulfillment=
   {
