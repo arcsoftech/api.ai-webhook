@@ -1,14 +1,15 @@
 var express = require('express');
 var app = express();
-var fs = require("fs");
+
 var bodyParser = require('body-parser');
+var json_body_parser = body_parser.json();
 var request = require('request');
 app.use(bodyParser.json());
 //const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
         const proxy = '';
 
 
-app.post('/weather', function (req, res) {
+app.post('/weather',json_body_parser, function (req, res) {
 res.set('Content-Type', 'application/json');
 
   var options = { 
