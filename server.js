@@ -9,12 +9,7 @@ app.use(bodyParser.json());
 
 
 app.post('/weather', function (req, res) {
-	res.set({
-  'Content-Type': 'application/json',
-  'Content-Length': '123',
-  'ETag': '12345'
-})
-
+var WeatherResult="";
   var options = { 
   method: 'GET',
   url: 'https://query.yahooapis.com/v1/public/yql',
@@ -29,20 +24,18 @@ app.post('/weather', function (req, res) {
    proxy: proxy
    };
 
-request(options, function (error, response, body) {
+WeatherResult=request(options, function (error, response, body) {
   if (error) 
   {
-	   console.log(error);
-  var error1=
+  var error=
   {
-	 
 	  "status": {
     "code": 206,
     "errorType": "partial_content",
     "errorDetails": "Webhook call failed. Status code 503. Error:503 Service Unavailable"
 }
   }
-      res.end(JSON.stringify(error1));
+      res.end(JSON.stringify(error));
 	  throw new Error(error);
   }
   else{
@@ -55,7 +48,7 @@ request(options, function (error, response, body) {
   {
   "speech": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F",
   "source": "Arcsoftech-Webhook",
-  "displayText": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F"	  
+  "displayText": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F"
  }
   }
 
