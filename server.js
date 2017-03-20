@@ -45,14 +45,14 @@ request(options, function (error, response, body) {
   console.log("API call succesfull.");
   var data = JSON.parse( body );
   var fulfillment=
-  {
-  	"fulfillment":
+  //{
+  //	"fulfillment":
   	{
  	  "speech": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F",
   	  "source": "Arcsoftech-Webhook",
  	  "displayText": "Today in "+data.query.results.channel.location.city+","+data.query.results.channel.location.country +" : "+data.query.results.channel.item.condition.text+", the temperature is "+data.query.results.channel.item.condition.temp+" F"
  	 }
-  }
+  //}
 
   res.end(JSON.stringify(fulfillment));
   }
