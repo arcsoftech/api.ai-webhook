@@ -14,8 +14,8 @@ var json_body_parser = bodyParser.json();//this is used to prevent empty reponse
 var request = require('request');
 app.use(bodyParser.json());
 var path    = require("path");
-const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
-//const proxy = '';
+//const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
+const proxy = '';
 app.post('/weather',json_body_parser, function (req, res) //2nd parameter is used to prevent empty string error in api.ai
 {
 	res.set('Content-Type', 'application/json');
