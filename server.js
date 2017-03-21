@@ -13,8 +13,9 @@ var bodyParser = require('body-parser');
 var json_body_parser = bodyParser.json();//this is used to prevent empty reponse in api.ai
 var request = require('request');
 app.use(bodyParser.json());
-//const proxy='http://proxy.company.com:8080';// or blank for without proxy
- const proxy = '';
+var path    = require("path");
+const proxy='http://proxy.tcs.com:8080';// or blank for without proxy
+//const proxy = '';
 app.post('/weather',json_body_parser, function (req, res) //2nd parameter is used to prevent empty string error in api.ai
 {
 	res.set('Content-Type', 'application/json');
@@ -66,66 +67,7 @@ app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
 app.get('/', function(request, response) {
-    var template = "<html>"+
-"<head>"+
-"<title>Arcsoftech-Webhook</title>"+
-"</head>"+
-"<body>"+
-"<div>"+
-    "<centre>"+
-    "<h3>Application Info</h3>"+
-    "<h4><b>Status:</b>App is running</h4>"+
-    "<table border='1'>"+
-        "<thead>"+
-            "<tr>"+
-                "<th>S.no</th>"+
-                "<th>Entity</th>"+
-                "<th>Value</th>"+
-            "</tr>"+
-        "</thead>"+
-        "<tbody>"+
-            "<tr>"+
-                "<td>1</td>"+
-                "<td>Name</td>"+
-                "<td>Arcsoftech-Heroku</td>"+
-            "</tr>"+
-            "<tr>"+
-                "<td>2</td>"+
-                "<td>Purpose</td>"+
-                "<td>To showcase Example for Webhook in API.AI</td>"+
-            "</tr>"+
-               "<tr>"+
-                "<td>3</td>"+
-                "<td>Author</td>"+
-                "<td>Arihant Chhajed</td>"+
-            "</tr>"+
-               "<tr>"+
-                "<td>4</td>"+
-                "<td>Github Repository</td>"+
-                "<td>https://github.com/arcsoftech/api.ai-webhook.git</td>"+
-            "</tr>"+
-               "<tr>"+
-                "<td>5</td>"+
-                "<td>API Request Method</td>"+
-                "<td>POST</td>"+
-            "</tr>"+
-             "<tr>"+
-                "<td>6</td>"+
-                "<td>Service Used</td>"+
-				"<td>Yahoo Weather API</td>"+
-            "</tr>"+
-                 "<tr>"+
-                "<td>7</td>"+
-                "<td>API EndPoint</td>"+
-                "<td>https://webhook-arcsoftech.herokuapp.com/weather</td>"+
-            "</tr>"+ 
-        "</tbody>"+
-    "</table>"+
-    "</center>"+
-"</div>"+
-"</body>"+
-"</html>"
-    response.send(template);
+   response.sendFile(path.join(__dirname+'/template.html'));
 }).listen(app.get('port'), function() {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
