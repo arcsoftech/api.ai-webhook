@@ -1,7 +1,8 @@
 /*
  *Author:Arihant Chhajed
  *Language:Node.JS
- *License:Open-Source
+ *License:Free
+ *Service Used:Yahoo Weather API
 */
 
 
